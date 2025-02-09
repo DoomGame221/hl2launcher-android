@@ -30,10 +30,9 @@ jobs:
       run: |
         scripts/workflow.sh
         
-    - name: Upload APK
+    - name: 'Upload Artifact'
       uses: actions/upload-artifact@v4
       with:
-        name: srceng-debug.apk  # ตั้งชื่อเป็นไฟล์ .apk โดยตรง
-        path: bin/srceng-debug.apk
-        if-no-files-found: error  # หากไม่มีไฟล์ให้แสดง error
-        retention-days: 7  # ตั้งอายุไฟล์ให้เก็บไว้ 7 วัน
+        name: Build App
+        path: srceng-debug.apk
+        retention-days: 7  # ลบใน 7 วัน
