@@ -1,7 +1,10 @@
 name: Build android package
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ android-fixes ]
+  pull_request:
+    branches: [ android-fixes ]
 
 jobs:
   build:
