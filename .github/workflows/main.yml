@@ -12,8 +12,8 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt install -y make openjdk-8-jdk openjdk-8-jre ant-contrib python3-requests python3-pip
-        pip3 install --user websocket-client  # ติดตั้งแบบ user แทน sudo
+        sudo apt install -y make openjdk-8-jdk openjdk-8-jre ant-contrib python3-requests python3-pip zlib1g
+        pip3 install --user websocket-client
 
     - name: Download tools
       run: |
@@ -35,5 +35,5 @@ jobs:
       with:
         name: Build App
         path: bin/srceng-debug.apk
-        if-no-files-found: error  # หากไม่มีไฟล์ให้แสดง error
-        retention-days: 7  # ลบใน 7 วัน
+        if-no-files-found: error
+        retention-days: 7
